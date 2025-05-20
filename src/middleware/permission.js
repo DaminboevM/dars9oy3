@@ -1,4 +1,4 @@
-import User from "../models/user.model.js"
+import User from "../module/user.module.js"
 import Permission from "../module/permission.module.js"
 
 async function checkPermission(req, res, next) {
@@ -16,7 +16,7 @@ async function checkPermission(req, res, next) {
 
     const permission = await Permission.findOne({ username, resource })
     if (!permission || !permission.actions.includes(action)) {
-      return res.status(403).json({ message: "Ruxsat yo‘q" })
+      
     }
 
     next()
