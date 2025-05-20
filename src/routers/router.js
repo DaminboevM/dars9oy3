@@ -1,0 +1,13 @@
+import { Router } from "express";
+import categoryRouter from "./category.route.js";
+import userRouter from "./user.route.js";
+
+
+const router = Router()
+
+router.use('/user', userRouter)
+router.use('/category', categoryRouter)
+
+
+
+export default router
